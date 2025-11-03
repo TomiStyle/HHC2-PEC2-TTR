@@ -3,17 +3,41 @@
  * Do not include SCSS code in this file.
  */
 
+/* Variables y funciones */
+@use "variables";
+@use "functions";
+@use "mixins";
+
  /**
  * Import dependencies
  */
-@use "dependencies";
+/* Base (reset y estilos HTML globales) */
+@layer base {
+  @import "base";
+}
+
+/* Bootstrap y dependencias npm */
+@layer bootstrap {
+  @import "dependencies";
+}
+
+/* Utilities (clases u-*) */
+@layer utilities {
+  @import "utilities";
+}
 
 /**
  * Import layouts
  * It's a best practice to use a different partial for each page
  */
 
- @use "layouts/home";
+/* Layouts por página */
+@layer layout {
+  @import "layouts/home";
+  @import "layouts/speakers";
+  @import "layouts/article";
+  @import "layouts/free";
+}
 
 /**
  * Do NOT include anything else in this file!
