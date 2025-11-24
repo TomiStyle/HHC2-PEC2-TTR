@@ -6,15 +6,38 @@
   font-size: 0.9rem;
 }
 
+/* Enlaces de navegación del footer */
 .c-footer__links a {
   text-decoration: none;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     text-decoration: underline;
   }
 }
 
-.c-footer__socials i {
-  font-size: 1.25rem;
+/* Bloque de redes sociales */
+.c-footer__socials {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+/* Enlaces de iconos de redes */
+.c-footer__social-link {
+  color: #f9fafb !important;  /* blanco, por encima del azul de Bootstrap */
+  font-size: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Aseguramos que el <i> hereda el color del enlace */
+.c-footer__social-link i {
+  color: inherit;
+}
+
+.c-footer__social-link:hover,
+.c-footer__social-link:focus-visible {
+  color: #e5e7eb !important;  // gris claro al pasar el ratón
 }

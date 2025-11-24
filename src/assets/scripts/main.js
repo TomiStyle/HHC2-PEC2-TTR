@@ -8,6 +8,7 @@
 
 // Importa el bundle de Bootstrap (incluye Popper y comportamientos JS)
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 /**
  * Write any other JavaScript below
