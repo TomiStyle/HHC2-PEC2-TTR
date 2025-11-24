@@ -1,1 +1,68 @@
-/* Comentario para evitar error de Stylelint */
+/*
+ * Página libre (FREE) - Formulario de contacto.
+ * Usa Bootstrap para el formulario y estilos propios para el layout.
+ */
+
+.l-free {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: 2rem 1rem;
+  background: radial-gradient(circle at top left, #f7f0e8, #fefcf8);
+}
+
+/* Contenedor principal del contacto */
+.c-contact {
+  text-align: center;
+}
+
+/* Tarjeta del formulario */
+.c-contact__form {
+  max-width: 32rem;
+  padding: 2rem 2.5rem;
+  background-color: #ffffff;
+  border-radius: 1.25rem;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.08);
+}
+
+/* Afinar los campos del formulario (aprovechando Bootstrap) */
+.c-contact__form .form-label {
+  font-weight: 500;
+}
+
+.c-contact__form .form-control {
+  padding: 0.7rem 0.9rem;
+  border-color: #e5e7eb;
+  border-radius: 0.75rem;
+}
+
+.c-contact__form .form-control:focus {
+  border-color: #111827;
+  box-shadow: 0 0 0 0.15rem rgba(17, 24, 39, 0.15);
+}
+
+/* Botón */
+.c-contact__form .btn-primary {
+  padding-inline: 2.5rem;
+  border-radius: 999px;
+}
+
+/* Mensaje de error o validación de HTML5 */
+.c-contact__form :is(input, textarea):invalid:focus {
+  border-color: #b91c1c;
+}
+
+/* Container query: pantallas pequeñas */
+@container (max-width: 600px) {
+  .c-contact__form {
+    padding: 1.5rem 1.5rem;
+    border-radius: 1rem;
+  }
+}
+
+.c-contact__status {
+  min-height: 1.5rem;
+  font-size: 0.95rem;
+  color: #111827;
+}

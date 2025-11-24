@@ -8,7 +8,7 @@
 @use "functions";
 @use "mixins";
 
- /**
+/**
  * Import dependencies
  */
 /* Base (reset y estilos HTML globales) */
@@ -16,8 +16,9 @@
   @import "base";
 }
 
-/* Bootstrap y dependencias npm */
+/* Bootstrap y dependencias */
 @layer bootstrap {
+  // @import "bootstrap-variables";
   @import "dependencies";
 }
 

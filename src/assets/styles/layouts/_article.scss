@@ -1,1 +1,169 @@
-/* Comentario para evitar error de Stylelint */
+/* 
+ * Página de artículo (ARTICLE).
+ * Hero a ancho completo + contenido con tipografía enriquecida.
+ * Uso de :has(), :is() y :where().
+ */
+
+.l-article {
+  min-height: 100dvh;
+}
+
+/* ========== HERO CON IMAGEN A ANCHO COMPLETO ========== */
+.c-article-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  height: clamp(24rem, 50dvh, 36rem);
+  overflow: hidden;
+}
+
+.c-article-hero__image {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.c-article-hero__overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 2rem;
+  color: #ffffff;
+  text-align: center;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+}
+
+.c-article-hero__title {
+  margin-bottom: 0.5rem;
+  font-size: clamp(2rem, 4cqw, 3rem);
+  line-height: 1.1;
+  text-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.6);
+}
+
+.c-article-hero__meta {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.5cqw, 1.1rem);
+  opacity: 0.95;
+}
+
+/* ========== CONTENIDO DEL ARTÍCULO ========== */
+.c-article {
+  max-width: 48rem;
+  margin-inline: auto;
+}
+
+.c-article__content {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #1f2937;
+}
+
+/* Párrafo destacado (lead) */
+.c-article__lead {
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #111827;
+  text-align: justify;
+}
+
+/* Espaciado entre elementos de contenido */
+.c-article__content > * + * {
+  margin-top: 1.5rem;
+  text-align: justify;
+}
+
+/* Blockquote */
+.c-article__quote {
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: #374151;
+  background-color: #f9fafb;
+  border-left: 0.25rem solid #111827;
+  border-radius: 0.5rem;
+}
+
+/* Figura con imagen */
+.c-article__figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.c-article__figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+.c-article__figure figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #6b7280;
+}
+
+/* Listas */
+.c-article__list {
+  padding-left: 1.5rem;
+  line-height: 1.8;
+}
+
+.c-article__list li + li {
+  margin-top: 0.5rem;
+}
+
+/* Títulos dentro del artículo */
+.c-article__content h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ========== PSEUDOCLASES MODERNAS ========== */
+
+/* :has() → Si el artículo contiene un blockquote, añade padding extra al contenedor */
+.c-article:has(.c-article__quote) {
+  padding-block: 3rem;
+}
+
+/* :is() → Aplicar estilo común a varios selectores de lista */
+.c-article__content :is(ul, ol) {
+  color: #374151;
+}
+
+/* :where() → Resetear margen de primer hijo sin aumentar especificidad */
+.c-article__content :where(> *:first-child) {
+  margin-top: 0;
+}
+
+/* Container query: ajustar tamaño de fuente en pantallas pequeñas */
+@container (max-width: 600px) {
+  .c-article-hero__title {
+    font-size: 1.75rem;
+  }
+
+  .c-article__lead {
+    font-size: 1.1rem;
+  }
+
+  .c-article__content {
+    font-size: 1rem;
+  }
+
+  .c-article__quote {
+    padding: 1.25rem 1.5rem;
+    font-size: 1.1rem;
+  }
+}

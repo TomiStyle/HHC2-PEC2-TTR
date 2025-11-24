@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jornadas de Cocina Tradicional · Free</title>
+  <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+  <!-- do not remove -->
+  <link rel="apple-touch-icon"
+    href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_186670000000000001/attachments/1641/apple-icon-180x180.png" />
+  <link rel="icon" type="image/x-icon"
+    href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_186670000000000001/attachments/1640/favicon-32x32.png" />
+</head>
+
+<body>
+  <include src="./views/header.html"></include>
+
+  <main class="l-free" container-type="inline-size">
+    <section class="c-contact container my-5 text-center">
+      <h1 class="mb-3">Contacto</h1>
+      <p class="mb-4">¿Deseas más información sobre las jornadas? Escríbenos:</p>
+
+      <form id="contact-form" name="contact" method="POST" data-netlify="true" class="c-contact__form mx-auto">
+        <!-- Campo oculto recomendado por Netlify -->
+        <input type="hidden" name="form-name" value="contact" />
+
+        <div class="mb-3">
+          <label class="form-label" for="name">Nombre</label>
+          <input id="name" name="name" type="text" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="email">Correo electrónico</label>
+          <input id="email" name="email" type="email" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="message">Mensaje</label>
+          <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+
+        <!-- Mensaje de estado para mostrar éxito / error en local -->
+        <p class="c-contact__status mt-3" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <include src="./views/footer.html"></include>
+  <script type="module" src="./assets/scripts/main.js"></script>
+  <!-- do not remove -->
+</body>
+
+</html>

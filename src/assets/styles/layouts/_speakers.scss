@@ -1,1 +1,91 @@
-/* Comentario para evitar error de Stylelint */
+/* 
+ * Página de ponentes (SPEAKERS).
+ * Retícula con Flexbox sin usar .row/.col-* de Bootstrap.
+ */
+
+.l-speakers {
+  min-height: 100dvh;
+}
+
+/* Contenedor general */
+.c-speakers {
+  text-align: left;
+}
+
+/* Limitar el ancho del grid para controlar mejor el nº de columnas */
+.c-speakers__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 72rem; /* ~3 columnas cómodas */
+  margin-inline: auto;
+}
+
+/* Tarjeta de ponente (estilo tipo card, pero sin usar .card de Bootstrap directamente) */
+.c-speaker-card {
+  display: flex;
+
+  /* Cards más grandes: base 20rem */
+  flex: 1 1 20rem;
+  flex-direction: column;
+  align-items: center;
+  max-width: 22rem;
+
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.08);
+}
+
+/* Imagen del ponente */
+.c-speaker-card img {
+  width: 6.5rem;
+  height: 6.5rem;
+  margin-bottom: 0.9rem;
+  object-fit: cover;
+  border-radius: 999px;
+}
+
+/* Nombre y rol */
+.c-speaker-card__name {
+  margin-bottom: 0.3rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.c-speaker-card__role {
+  margin-bottom: 0.9rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+}
+
+/* Bio */
+.c-speaker-card__bio {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Container query: móvil (1 columna) */
+@container (max-width: 700px) {
+  .c-speakers__grid {
+    justify-content: center;
+  }
+
+  .c-speaker-card {
+    flex: 1 1 100%;
+    max-width: 24rem;
+  }
+}
+
+/* Container query: escritorio (3 columnas) */
+@container (min-width: 700px) {
+  .c-speaker-card {
+    flex: 1 1 calc(33.333% - 2rem);
+    max-width: none;
+  }
+}

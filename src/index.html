@@ -1,27 +1,47 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="es">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jornadas de Cocina Tradicional · Portada</title>
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" /><!-- do not remove -->
+    <link rel="apple-touch-icon" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_186670000000000001/attachments/1641/apple-icon-180x180.png">
+    <link rel="icon" type="image/x-icon" href="https://instructure-uploads-eu.s3.eu-west-1.amazonaws.com/account_186670000000000001/attachments/1640/favicon-32x32.png">
   </head>
   <body>
-    <div class="uoc-container">
-      <picture>
-        <source srcset="./assets/images/logo.png?as=webp&width=350" type="image/webp" />
-        <img src="./assets/images/logo.png?width=350" alt="Universitat Oberta de Catalunya" class="uoc-logo" />
-      </picture>
-      <h1 class="uoc-title">Hello, UOC!</h1>
-      <p>
-        This is a starter template for the Advanced HTML and CSS Tools courses
-        from the Master's Program in Multimedia Applications and the Master's
-        Program in Web App and Website Development at the Universitat Oberta de
-        Catalunya.
-      </p>
-    </div>
+    <include src="./views/header.html"></include>
+
+    <main class="l-home" id="home" container-type="inline-size">
+      <section class="c-hero">
+        <div class="c-hero__media">
+          <img src="./assets/images/hero.jpg" alt="Cocina tradicional" />
+        </div>
+
+        <div class="c-hero__content">
+          <p class="c-hero__kicker">Jornadas de Cocina Tradicional · 12–14 mayo · Barcelona</p>
+          <h1 class="c-hero__title">Sabores de siempre,<br>cocina de hoy</h1>
+          <p class="c-hero__subtitle">
+            Talleres, showcookings y charlas para recuperar la memoria gastronómica
+            y adaptarla al siglo XXI.
+          </p>
+          <div class="c-hero__actions">
+            <a href="speakers.html" class="btn btn-primary">Conoce a los ponentes</a>
+            <a href="article.html" class="btn btn-outline-light">Leer más sobre las jornadas</a>
+          </div>
+        </div>
+
+        <aside class="c-hero__info">
+          <h2 class="c-hero__info-title">Incluye</h2>
+          <ul class="c-hero__info-list">
+            <li>+10 ponentes especialistas</li>
+            <li>Talleres prácticos de cocina</li>
+            <li>Degustaciones y maridajes</li>
+          </ul>
+        </aside>
+      </section>
+    </main>
+
     <include src="./views/footer.html"></include>
-    <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
+    <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove -->
   </body>
 </html>
